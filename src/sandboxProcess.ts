@@ -77,7 +77,7 @@ export class SandboxProcess {
                     const memUsage = memUsageWithCache - cache;
                     
 
-                    const testMemory = sandboxAddon.GetCgroupProperty2("memory", myFather.parameter.cgroup, "memory.stat");
+                    const testMemory = sandboxAddon.GetCgroupProperty("memory", myFather.parameter.cgroup, "memory.stat");
 
                     console.info("**********************************");
                     console.info("testMemory=>", testMemory);
