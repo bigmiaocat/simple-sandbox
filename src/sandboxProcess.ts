@@ -76,6 +76,12 @@ export class SandboxProcess {
                     const cache: number = Number(sandboxAddon.GetCgroupProperty2("memory", myFather.parameter.cgroup, "memory.stat", "cache"));
                     const memUsage = memUsageWithCache - cache;
 
+                    console.info("**********************************");
+                    console.info("memUsageWithCache=>", memUsageWithCache);
+                    console.info("cache=>", cache);
+                    console.info("memUsage=>", memUsage);
+                    console.info("**********************************");
+
                     myFather.actualCpuTime = Number(sandboxAddon.GetCgroupProperty("cpuacct", myFather.parameter.cgroup, "cpuacct.usage"));
                     myFather.cleanup();
 
