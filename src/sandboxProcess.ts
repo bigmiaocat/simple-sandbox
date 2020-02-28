@@ -75,8 +75,12 @@ export class SandboxProcess {
                     const memUsageWithCache: number = Number(sandboxAddon.GetCgroupProperty("memory", myFather.parameter.cgroup, "memory.memsw.max_usage_in_bytes"));
                     const cache: number = Number(sandboxAddon.GetCgroupProperty2("memory", myFather.parameter.cgroup, "memory.stat", "cache"));
                     const memUsage = memUsageWithCache - cache;
+                    
+
+                    const testMemory: number = Number(sandboxAddon.GetCgroupProperty("memory", myFather.parameter.cgroup, "memory.memsw.usage_in_bytes"));
 
                     console.info("**********************************");
+                    console.info("testMemory=>", testMemory);
                     console.info("memUsageWithCache=>", memUsageWithCache);
                     console.info("cache=>", cache);
                     console.info("memUsage=>", memUsage);
